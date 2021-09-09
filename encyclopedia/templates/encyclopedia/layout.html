@@ -12,16 +12,16 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <span class="navbar-brand">Bioscience</span>
+                <span class="navbar-brand"><h3>Bioscience</h3></span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav"> 
                         <a class="nav-link" href="{% url 'index' %}">Home</a>                        
-                        <a class="nav-link" href="{% url 'addnotes' %}">Add Notes</a>
+                        <a class="nav-link" href="https://script.google.com/macros/s/AKfycbxgif1BQdnNAgF0FUvJ4Iumsp_GhEy5jJhguaYq6WrkrP4e_Txry-9hSgAZZXghG-33/exec">Add Notes</a>
                         <a class="nav-link" href="{% url 'paperhome' %}">Previous Year Papers</a>  
-                        <a class="nav-link" href="{% url 'addpaper' %}">Add a Paper</a>
+                        <a class="nav-link" href="https://script.google.com/macros/s/AKfycbyIkkvp-VXES3r3ohGE4EyJeGdoUMn4vuKb5HRZ6HXTu6MWs_XLmQpOAQ0ZW_sqI5zl/exec">Add a Paper</a>
                         <a class="nav-link" href="{% url 'contact' %}">Contact us</a>  
                         
                         <form class="d-flex" action="{% url 'search' %}" method="POST">

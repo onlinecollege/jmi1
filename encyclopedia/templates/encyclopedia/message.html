@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Message
+{% endblock %}
+
+{% block body %}
+
+    <div class="alert alert-success" role="alert">
+        <h4>{{ message.title }}</h4>
+    </div> 
+
+    <h6>- by {{ message.user }}</h6>
+    <hr>
+
+    {{ message.content|safe }}
+
+{% endblock %}

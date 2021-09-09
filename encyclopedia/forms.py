@@ -53,6 +53,6 @@ class NewNotesForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'e.g. Protein Synthesis'}))
     subject = forms.ChoiceField(choices=Subject)
 
-    source =  forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Where did you get these notes?'}))   
+    source =  forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Where did you get these notes? We prefer genuine and accurate material.'}))   
     your_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'e.g. Mohammad Ali'}))
     file_url = forms.URLField(widget=URLInput(attrs={'placeholder': 'Please paste the above generated link'}))

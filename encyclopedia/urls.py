@@ -11,5 +11,6 @@ urlpatterns = [
     path("searchpaper", views.searchpaper, name="searchpaper"),
     path("subjectpapers", views.subjectpapers, name="subjectpapers"),
     path("addpaper", views.addpaper, name="addpaper"),
-    path("contact", views.contact, name="contact")
+    path("contact", views.contact, name="contact"),
+    path("message/<str:user>", views.message, name="message")
 ]

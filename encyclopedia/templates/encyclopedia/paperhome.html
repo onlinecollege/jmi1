@@ -8,10 +8,22 @@
 
 {% block body %} 
 
-<div class="vstack gap-2 col-md-5 mx-auto">
-    <button type="button" class="btn btn-success"><a href="{% url 'searchpaper' %}"><h1>Search a paper</h1></a></button>
-    <button type="button" class="btn btn-light"><a href="{% url 'subjectpapers' %}"><h1>Subjectwise papers</h1></a></button>
-    <button type="button" class="btn btn-info"><a href="{% url 'addpaper' %}"><h1>Add a paper</h1></a></button>
+<div class="vstack gap-2 col-md-5 mx-auto" style="margin-top: 40px;">
+
+  <div class="alert alert-success" role="alert">
+    <a href="{% url 'searchpaper' %}"><h1>Search a paper</h1></a>
   </div>
+
+  <div class="alert alert-warning" role="alert">
+    <a href="{% url 'subjectpapers' %}"><h1>Subjectwise papers</h1></a>
+  </div>
+
+  <div class="alert alert-info" role="alert">
+    <a href="https://script.google.com/macros/s/AKfycbyIkkvp-VXES3r3ohGE4EyJeGdoUMn4vuKb5HRZ6HXTu6MWs_XLmQpOAQ0ZW_sqI5zl/exec">
+      <h1>Add a paper</h1>
+    </a>
+  </div>
+
+</div>
 
 {% endblock %} 

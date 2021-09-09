@@ -1,4 +1,4 @@
-from encyclopedia.models import Note, Paper
+from encyclopedia.models import Message, Note, Paper
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from random import choice
@@ -143,7 +143,12 @@ def  addpaper(request):
         })
 
 
-
-
 def contact(request):
     return render(request, "encyclopedia/contact.html")
+
+
+def message(request, user):
+    message = Message.objects.get(user=user)
+    return render(request, "encyclopedia/message.html", {
+        'message': message
+    })

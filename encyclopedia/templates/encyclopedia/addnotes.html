@@ -7,15 +7,32 @@
 {% endblock %}
 
 {% block body %} 
-<div class="alert alert-success" role="alert">
-    <h3>Add Notes</h3>
+<div class="alert alert-info" role="alert">
+    <h5>Please allow automatic pasting when asked</h5>
 </div>
+
 <form action="{% url 'addnotes' %}" method="POST" autocomplete="off">
     {% csrf_token %} 
 
     <div class="col-12">
-        {{ form.title|as_crispy_field }}
+        <label for="title">Title*</label>
+        <input type="text" id="title" class="form-control" name="title" placeholder="e.g. Protein Synthesis" required onkeyup="pasteit()">
+        <br>
     </div>
+
+    <div class="input-group mb-3 col-12">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">File Link (Automatically Pasted)</span>
+        </div>
+        <input type="text" id="file_url" name="file_url" class="form-control" placeholder="File link will be uploaded automatically">
+        
+    </div> 
+
+    <div class="col-12">
+        <label>* If file link is not pasted automatically, do it manually as file link has been copied to your clipboard</label>        
+    </div>
+
+    <br>
 
     <div class="col-md-6">
         {{ form.subject|as_crispy_field }}
@@ -28,24 +45,18 @@
     <div class="col-12">
         {{ form.source|as_crispy_field }}
     </div>  
-    
-    <div class="alert alert-info" role="alert">
-        Please submit the file below and paste the generated link in the following box
-    </div>
-
-    <iframe id="myIframe" src="https://script.google.com/macros/s/AKfycby7R9aIh6GkPjtIP3a_WmgQeNFRhpAQ1PqmOPnp0ZFyJmBiFPnCi550C5eoudn-qeo/exec" frameborder=False allow="clipboard-read; clipboar-write" height="250" width="370" ></iframe>   
-
-    <div class="alert alert-success" role="alert">
-        Please paste the above generated link in this box
-    </div>
-
-    <div class="col-12">
-        {{ form.file_url|as_crispy_field }}
-    </div>      
-        
+            
     <div class="col-12">              
         <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
     </div>
 </form>
+
+<script>
+    function pasteit() {
+        navigator.clipboard.readText().then(text => {
+            document.getElementById('file_url').value = text;
+        })
+    }
+</script>
 
 {% endblock %} 
