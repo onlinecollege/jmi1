@@ -47,6 +47,10 @@ a {
                    width: 20%;
                    margin: 20px;                   
                 }
+    
+    #jmi {
+            hidden: true;
+        ]
 }
 
 @media (max-width: 300px) {
