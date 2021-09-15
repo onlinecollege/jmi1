@@ -59,8 +59,9 @@ a {
 .quote {
     margin-right: 20%;
     margin-left: 20%;
+}
+
     
-    cite {
-        color:  #E67E22;
-    }
+cite {
+    color:  #E67E22;
 }
