@@ -1,7 +1,6 @@
-{% load static %}
+{% load static %} 
 
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -12,21 +11,35 @@
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </head>
+
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <span class="navbar-brand"><h3>Bioscience</h3></span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <!--THIS IS HEADER SECTION-->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><h4>BIOSCIENCE</h4></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav"> 
-                        <a class="nav-link" href="{% url 'index' %}">Home</a>                        
-                        <a class="nav-link" href="https://script.google.com/macros/s/AKfycbxgif1BQdnNAgF0FUvJ4Iumsp_GhEy5jJhguaYq6WrkrP4e_Txry-9hSgAZZXghG-33/exec">Add Notes</a>
-                        <a class="nav-link" href="{% url 'paperhome' %}">Previous Year Papers</a>  
-                        <a class="nav-link" href="https://script.google.com/macros/s/AKfycbyIkkvp-VXES3r3ohGE4EyJeGdoUMn4vuKb5HRZ6HXTu6MWs_XLmQpOAQ0ZW_sqI5zl/exec">Add a Paper</a>
-                        <a class="nav-link" href="{% url 'contact' %}">Contact us</a>  
-                        
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://script.google.com/macros/s/AKfycbxgif1BQdnNAgF0FUvJ4Iumsp_GhEy5jJhguaYq6WrkrP4e_Txry-9hSgAZZXghG-33/exec">Add Notes</a>                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'paperhome' %}">Previous Year Papers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://script.google.com/macros/s/AKfycbyIkkvp-VXES3r3ohGE4EyJeGdoUMn4vuKb5HRZ6HXTu6MWs_XLmQpOAQ0ZW_sqI5zl/exec">Add a Paper</a>                        
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact us</a>  
+                            </li>       
+                        </ul>
+
                         <form class="d-flex" action="{% url 'search' %}" method="POST">
                             {% csrf_token %} 
                             <input autocomplete="off" class="form-control me-2" name="q" type="search" placeholder="Search Library">
@@ -35,16 +48,12 @@
 
                     </div>
                 </div>
-            </div>
-        </nav>
-                
-        {% block nav %}
+            </nav>
+        </header>
+
+        <!--Space to add things in template-->
+        {% block body %} 
         {% endblock %}
         
-        <div class="main col-lg-10 col-md-9">
-            {% block body %}
-            {% endblock %}
-        </div>
-
     </body>
 </html>
