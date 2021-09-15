@@ -49,12 +49,12 @@ a {
                 }
 }
 
-@media (max-width: 300px) {
-               .logo {
-                   width: 90%;
-                   margin: 20px;
-                }
+
+.logo {
+   width: 90%;
+   margin: 20px;
 }
+
 
 .quote {
     margin-right: 15%;
