@@ -64,7 +64,10 @@ def search(request):
       
 #####
 def paperhome(request):
-    return render(request, "encyclopedia/paperhome.html")
+    totalPapers = Paper.objects.all().count()
+    return render(request, "encyclopedia/paperhome.html", {
+        "totalPapers":  totalPapers
+    })
 
 
 def searchpaper(request):
