@@ -27,6 +27,4 @@ class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=128, default='')
     content = models.TextField(default='', max_length=5000)
-
-
     
